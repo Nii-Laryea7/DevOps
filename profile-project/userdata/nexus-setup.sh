@@ -1,5 +1,6 @@
 #!/bin/bash
-yum install java-1.8.0-openjdk.x86_64 wget -y   
+sudo yum update -y
+sudo yum install java-1.8.0-openjdk.x86_64 wget -y   
 mkdir -p /opt/nexus/   
 mkdir -p /tmp/nexus/                           
 cd /tmp/nexus/
@@ -33,6 +34,6 @@ WantedBy=multi-user.target
 EOT
 
 echo 'run_as_user="nexus"' > /opt/nexus/$NEXUSDIR/bin/nexus.rc
-systemctl daemon-reload
-systemctl start nexus
-systemctl enable nexus
+sudo systemctl daemon-reload
+sudo systemctl start nexus
+sudo systemctl enable nexus
